@@ -1,0 +1,64 @@
+//media query variables
+@xs:~"only screen and (max-width: @{screen-xs-max})";
+@xs-retina:~"only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: @{screen-xs-max}),
+only screen and (min--moz-device-pixel-ratio: 2) and (max-width: @{screen-xs-max}),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: @{screen-xs-max}),
+only screen and (min-device-pixel-ratio: 2) and (max-width: @{screen-xs-max}),
+only screen and (min-resolution: 192dpi) and (max-width: @{screen-xs-max}),
+only screen and (min-resolution: 2dppx) and (max-width: @{screen-xs-max})";
+
+@sm:~"only screen and (min-width: @{screen-sm-min})";
+@sm-retina:~"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: @{screen-sm-min}),
+only screen and (min--moz-device-pixel-ratio: 2) and (min-width: @{screen-sm-min}),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: @{screen-sm-min}),
+only screen and (min-device-pixel-ratio: 2) and (min-width: @{screen-sm-min}),
+only screen and (min-resolution: 192dpi) and (min-width: @{screen-sm-min}),
+only screen and (min-resolution: 2dppx) and (min-width: @{screen-sm-min})";
+
+@md:~"only screen and (min-width: @{screen-md-min})";
+@md-retina:~"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: @{screen-md-min}),
+only screen and (min--moz-device-pixel-ratio: 2) and (min-width: @{screen-md-min}),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: @{screen-md-min}),
+only screen and (min-device-pixel-ratio: 2) and (min-width: @{screen-md-min}),
+only screen and (min-resolution: 192dpi) and (min-width: @{screen-md-min}),
+only screen and (min-resolution: 2dppx) and (min-width: @{screen-md-min})";
+
+@lg:~"only screen and (min-width: @{screen-lg-min})";
+@lg-retina:~"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: @{screen-lg-min}),
+only screen and (min--moz-device-pixel-ratio: 2) and (min-width: @{screen-lg-min}),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: @{screen-lg-min}),
+only screen and (min-device-pixel-ratio: 2) and (min-width: @{screen-lg-min}),
+only screen and (min-resolution: 192dpi) and (min-width: @{screen-lg-min}),
+only screen and (min-resolution: 2dppx) and (min-width: @{screen-lg-min})";
+
+.logo {
+		width:100px;
+		height:100px;
+
+		@media @sm {
+			width:200px;
+			height:200px;
+		}
+
+		a {
+			background:url("../image/image-sm.png");
+			width:100px;
+			height:100px;
+
+			@media @xs-retina {
+				background:url("../image/image-sm@2x.png");
+				background-size: 100px 100px;
+			}
+
+			@media @sm {
+				background:url("../image/image.png");
+				width:200px;
+				height:200px;
+			}
+
+			@media @sm-retina {
+				background:url("../image/image@2x.png");
+				background-size: 200px 200px;
+			}
+		}
+	}
