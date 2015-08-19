@@ -1,14 +1,15 @@
+<?php
 $query = new WP_Query($queryArgs);
-if( $query->have_posts()) { 
+if( $query->have_posts()) {
   //Variables
   $published = $query->post_count;
-  $itemsPerRow = number you want per row;
+  $itemsPerRow = 'number you want per row';
   $itemCount = 0;
   $flag = 0;
 ?>
 <!-- HTML before the loop -->
 Title Whatever
-<?php while( $query->have_posts()) : $query->the_post(); 
+<?php while( $query->have_posts()) : $query->the_post();
 
 //This example will write a ul around the number of li’s specified in $itemsPerRow. It will continue to write uls until all loop results have been written.  
 
@@ -42,9 +43,9 @@ echo $rowOpen;
 
 <!-- HTML FOR YOUR ITEM-->
 text text text
-<-- END HTML-->
 
 <?php
-endwhile; 
-echo $finalRowC; 
+endwhile;
+}
+echo $finalRowC;
 ?>
