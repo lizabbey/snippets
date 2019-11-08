@@ -1,0 +1,32 @@
+//BOOTSTRAP + GUTENBERG BUTTONS
+@each $color,
+$value in $colors {
+	//Make Buttons for every color
+	.btn-#{$color} {
+		@include button-variant($value, $value);
+	}
+
+	//Make Outline Buttons for every color
+	.btn-outline-#{$color} {
+		@include button-outline-variant($value);
+	}
+
+	//Make Backgrounds for every color
+	.bg-#{$color} {
+		background-color: #{$value};
+	}
+
+	//Apply Backgrounds to WP Color Picker
+	.has-#{$color}-background-color {
+		@extend .btn-#{$color};
+	}
+
+	//Apply Outlines for WP Buttons Color Picker
+	.wp-block-button.is-style-outline {
+		.has-#{$color}-background-color,
+		.has-#{$color}-color {
+			@extend .btn-outline-#{$color};
+			background-color: transparent;
+		}
+	}
+}
