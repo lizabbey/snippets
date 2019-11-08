@@ -1,0 +1,35 @@
+//Bootstrapify WP Buttons
+.wp-block-button__link {
+	@extend .btn;
+
+	.is-btn-lg & {
+		@extend .btn-lg;
+	}
+
+	.is-btn-sm & {
+		@extend .btn-sm;
+	}
+}
+
+//Bootstrapify WP Columns
+.page-content .wp-block-columns {
+	@include make-row();
+	.wp-block-column {
+		@extend .col-12;
+		margin-left: 0;
+	}
+
+	&.has-2-columns .wp-block-column {
+		@extend .col-lg-6;
+	}
+	&.has-3-columns .wp-block-column {
+		@extend .col-lg-4;
+	}
+	&.has-4-columns .wp-block-column {
+		@extend .col-lg-3;
+	}
+	&.has-6-columns .wp-block-column {
+		@extend .col-md-4;
+		@extend .col-lg-2;
+	}
+}
