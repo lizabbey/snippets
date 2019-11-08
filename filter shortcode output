@@ -1,0 +1,11 @@
+add_filter('do_shortcode_tag', 'gw_embed_wrap',10,3);
+function gw_embed_wrap($output, $tag) {
+	if($tag == 'embed' || $tag == 'gravityform') {
+		$new_output = '<div class="row text-center"><div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">';
+		$new_output .= $output;
+		$new_output .= '</div></div>';
+		return $new_output;
+	} else {
+		return $output;
+	}
+}
